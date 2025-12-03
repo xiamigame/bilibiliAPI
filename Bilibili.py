@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: gbk -*-
 # @Author: Moid
 # @Date:   2020-04-19 18:30:33
 # @Last Modified by:   Jingyuexing
@@ -67,13 +67,13 @@ head = {
 
 API = []
 
-with open("data/API.json", "r", encoding='utf-8') as file:
+with open("data/API.json", "r", encoding='gbk') as file:
     API = json.loads(file.read())
     file.close()
 
 def randomAgent():
     import random
-    with open("data/UserAgent.json",'r',encoding='utf-8') as file:
+    with open("data/UserAgent.json",'r',encoding='gbk') as file:
         UserAgent = json.loads(file.read())
         file.close()
         index = random.randint(0,len(UserAgent)-1)
@@ -140,7 +140,7 @@ def requests(method='', url='', param={},types='json'):
     head['User-Agent'] = randomAgent()
     req = http.request(method=method, url=url, fields=param, headers=head)
     if (req.status == 200):
-        resData = json.loads(req.data.decode(encoding='utf-8'), encoding='utf-8')
+        resData = json.loads(req.data.decode(encoding='gbk'), encoding='gbk')
         _head = dict(req.headers)
 
         if('Set-Cookie' in list(_head.keys())):
@@ -887,7 +887,7 @@ class User(object):
             password {str} -- 用户密码
         """
         def encrypt_rsa(key, msg):
-            msg = msg.encode("utf-8")
+            msg = msg.encode("gbk")
             rsa_key = RSA.importKey(key)
             cipher = PKCS1_v1_5.new(rsa_key)
             text = cipher.encrypt(msg)
