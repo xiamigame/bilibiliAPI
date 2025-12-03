@@ -62,7 +62,7 @@ head = {
     "Accept-Language": "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2",
     "Accept": "application/json, text/plain, */*",
     "Upgrade-Insecure-Requests":1,
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
+    "User-Agent": "Mozilla/5.0 (Mac; ARM) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36"
 }
 
 API = []
@@ -298,7 +298,7 @@ def uploadImage(img: str = '', imgType: str = "daily"):
         return data['data']
 
 
-def getRoomInfo(userID=0):
+def getRoomInfo(userID):
     '''获取用户直播间信息
 
     [description]
